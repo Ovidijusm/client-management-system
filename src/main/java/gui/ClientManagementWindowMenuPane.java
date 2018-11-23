@@ -12,12 +12,12 @@ class ClientManagementWindowMenuPane extends JPanel {
     /**
      * Static JButton instance.
      */
-    static JButton moneyIncomeRegistration = new JButton("Money income registration");
+    static JButton moneyChooseFile = new JButton("Choose file");
 
     /**
      * Static JButton instance.
      */
-    static JButton moneyExpenseRegistration = new JButton("Money expenses registration");
+    static JButton moneyIncomeRegistration = new JButton("Money transactions registration");
 
     /**
      * Static JButton instance.
@@ -34,6 +34,8 @@ class ClientManagementWindowMenuPane extends JPanel {
      */
     static JButton saveDataAndExit = new JButton("Save data and exit");
 
+    static JPanel jPanel = new JPanel(new GridBagLayout());
+
     /**
      * Method creating Menu pane.
      */
@@ -41,7 +43,7 @@ class ClientManagementWindowMenuPane extends JPanel {
         GridBagConstraints gbc = new GridBagConstraints();
 
 
-        JPanel buttons = new JPanel(new GridBagLayout());
+
 
         setBorder(new EmptyBorder(10, 10, 10, 10));
         setLayout(new GridBagLayout());
@@ -55,13 +57,13 @@ class ClientManagementWindowMenuPane extends JPanel {
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
 
-        buttons.add(moneyIncomeRegistration, gbc);
-        buttons.add(moneyExpenseRegistration, gbc);
-        buttons.add(moneyTransactions, gbc);
-        buttons.add(moneyBalanceCalculation, gbc);
-        buttons.add(saveDataAndExit, gbc);
+        jPanel.add(moneyChooseFile, gbc);
+        jPanel.add(moneyIncomeRegistration, gbc);
+        jPanel.add(moneyTransactions, gbc);
+        jPanel.add(moneyBalanceCalculation, gbc);
+        jPanel.add(saveDataAndExit, gbc);
 
         gbc.weighty = 1;
-        add(buttons, gbc);
+        add(jPanel, gbc);
     }
 }
